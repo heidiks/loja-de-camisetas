@@ -11,3 +11,5 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'tzinfo-data'
+
+gem 'twitter-bootstrap-rails'
