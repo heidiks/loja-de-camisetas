@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= nav_bar brand: "Calaio", brand_link: root_url %>
+<%= nav_bar brand: "Calaio", brand_link: root_url do %>
+    <%= form_tag search_product_path, method: :get, class: "navbar-form navbar-right" do %>
+        <div class="form-group">
+          <%= text_field_tag :nome, @name_to_search, class: "form-control" %>
+          <%= button_to "Buscar", nil, class: "btn btn-default" %>
+        </div>
+    <% end %>
+<% end %>
 
 <div class="container">
   <%= yield %>
