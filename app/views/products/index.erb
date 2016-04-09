@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teste</title>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrição</th>
+			<th>Preço</th>
+			<th>Quantidade</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% todos = Product.all %>
+		<% todos.each do |product| %>
+		<tr>
+			<td> <%= product.name %> </td>
+			<td> <%= product.description %></td>
+			<td> <%= product.quantity %></td>
+			<td> <%= product.price %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</body>
+</html>
