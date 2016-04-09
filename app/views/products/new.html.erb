@@ -1,0 +1,16 @@
+<html>
+<body>
+<%= form_for Product.new do |f| %>
+    Nome <input type="text" name="product[name]"><br>
+
+    Descrição <textarea name="product[description]"></textarea><br>
+
+    Quantidade <input type="number" name="product[quantity]"><br>
+
+    Preço <input type="number" name="product[price]"><br>
+
+    <button type="submit">Salvar</button>
+<% end %>
+</body>
+
+</html>
