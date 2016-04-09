@@ -16,7 +16,8 @@
 			<td> <%= product.quantity %></td>
 			<td> <%= product.price %></td>
       <td>
-        <%= link_to "Remover", product, method: :delete %>
+        <%= button_to "Remover", product, method: :delete, class: "btn btn-danger",
+                      data: { confirm: "Tem certeza que deseja remover o produto: #{product.name}?"} %>
       </td>
 		</tr>
 		<% end %>
@@ -43,3 +44,6 @@
 		<% end %>
 	</tbody>
 </table>
+
+
+<%= link_to "Criar produto", new_product_path %>
