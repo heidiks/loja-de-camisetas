@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @departments = Department.all
   end
 
   def destroy
@@ -30,4 +31,6 @@ class ProductsController < ApplicationController
     @name_to_search = params[:nome]
     @products = Product.where "name like ?", "%#{@name_to_search}%"
   end
+
+
 end
