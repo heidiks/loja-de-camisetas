@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    render_new
+    render_page :new
   end
 
   def destroy
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    render_new
+    render_page :edit
   end
 
   def update
@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Produto atualizado com sucesso"
       redirect_to root_url
     else
-      render_new
+      render_page :new
     end
   end
 
@@ -52,9 +52,9 @@ class ProductsController < ApplicationController
     @product = Product.find(id)
   end
 
-  def render_new
+  def render_page(view)
     @departments = Department.all
-    render :new
+    render view
   end
 
   def product_params
